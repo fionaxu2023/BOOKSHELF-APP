@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>BOOKSHELF APP</title>
+</head>
+<body>
+    <div class="navbar">
+        <a class=nav-link id="homebar" href="index.html" style="color:black">Home</a>
+        <a class=nav-link id="contactbar" href="about.html" style="color:black">About</a>
+        <a class=nav-link id="aboutbar" href="contact.html" style="color:black">Contact</a> 
+    </div>
+    
+    <p id="intro">MHLF NOVEL-BUZZ</p>
+
+    <div id="mainpart">
+        <div id="inputboxes">
+            <div id="inputinfo">
+            <div class="inputbox"><input type="title" name="title" id="Title"
+                placeholder="Title" style="width: 100px"></input></div>
+            <div class="inputbox"><input type="Author" name="Author" id="Author"
+                placeholder="Author" style="width: 100px"></input></div>
+    
+            <div class="inputbox"><input type="Language" name="Language" id="Language"
+                placeholder="Language" style="width: 100px"></input></div>
+            <div class="inputbox"><fieldset style="width: 140px"> <legend>Category:</legend>
+                 <div>
+                  <input type="radio" id="Romantic" name="Category" value="Romantic"
+                         >
+                  <label for="Romantic">Romantic</label>
+                </div>
+            
+                <div>
+                  <input type="radio" id="Thriller" name="Category" value="Thriller">
+                  <label for="Thriller">Thriller</label>
+                </div>
+                <div>
+                  <input type="radio" id="Suspense" name="Category" value="Suspense">
+                  <label for="Suspense">Suspense</label>
+                </div>
+                <div>
+                    <input type="radio" id="Fantasy" name="Category" value="Fantasy">
+                    <label for="Fantasy">Fantasy</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="Historical" name="Category" value="Historical">
+                    <label for="Historical">Historical</label>
+                  </div>
+
+            </fieldset></div>
+
+            <div class="inputbox"><button id="btnadd" style="width: 100px">Add Book</button></div>
+        </div>
+
+        <div id="weblabel"><label for="webcomment" ">Your Comments on NOVEL-BUZZ</NOVEL-BUZZ>:</label>
+
+        <div><textarea id="webcomments" name="webcomments"
+                  maxlength="280">
+                  </textarea></div>
+            <div><button id="webbtn">Add Comments</button></div>
+        </div>
+ 
+        </div>
+
+        <div id="searchcontainer">
+            <div class="searchbox"><input type="Title" name="Title" id="Titlesearch"
+                placeholder="Enter the Title" style="width: 120px"></input>
+                <input type="Author" name="Author" id="Authorsearch"
+                placeholder="Enter the Author" style="width: 120px"></input>
+                <button id="btnsearch" >Search</button>
+            </div>
+
+            <div id="categorysearch"><fieldset style="width: 580px" style="color:black"> <legend>Search by Category:</legend>
+                 <input type="radio" id="Romantic" name="Categorysear" value="Romantic">
+                 <label for="Romantic">Romantic</label>
+                 <input type="radio" id="Thriller" name="Categorysear" value="Thriller">
+                 <label for="Thriller">Thriller</label>
+                 <input type="radio" id="Suspense" name="Categorysear" value="Suspense">
+                 <label for="Suspense">Suspense</label>
+                   <input type="radio" id="Fantasy" name="Categorysear" value="Fantasy">
+                   <label for="Fantasy">Fantasy</label>
+                   <input type="radio" id="Historical" name="Categorysear" value="Historical">
+                   <label for="Historical">Historical</label>
+                   <button id="btnsearchcat" >Search</button>
+           </fieldset>
+
+            </div>
+
+            <div id="pagesearch">
+                <fieldset style="width: 580px" style="color:black"> <legend>Search by Length:</legend>
+                    <input type="radio" id="page1" name="Pagesear" value="< 300">
+                    <label for="page1">Less than 300 pages</label>
+                    <input type="radio" id="page2" name="Pagesear" value="300-600">
+                    <label for="page2">300-600 pages </label>
+                    <input type="radio" id="page3" name="Pagesear" value=">600">
+                    <label for="page3">More than 600 pages</label>
+                    <button id="btnsearchpage" >Search</button>
+            </div>
+
+            <div id="searchoutput"></div>
+
+           
+        </div>
+
+        
+    </div>
+
+    <div id="totalbooks">
+        <div><p id="bookcount">Count of Books:</p></div>
+       <div><p id="bookmarkcount">Count of Books Marked:</p></div> 
+       <div id="bookscontainer"></div>
+    </div>
+    
+</body>
+<script src="index.js"></script>
+</html>

@@ -1,0 +1,194 @@
+.navbar{
+    margin-left: 290px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    
+   
+}
+
+#intro{
+    margin-left: 290px;
+    margin-bottom: 0.5px;
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#mainpart{
+    display:grid;
+    grid-template-columns: repeat(2,2fr);
+    grid-template-rows: repeat(2,2fr);
+    gap:10px;
+    height:900px;
+    width:60%;
+    margin:auto;
+}
+
+#inputboxes{
+    position: relative;
+    width:250px;
+    height: 750px;
+    border:solid black; 
+
+}
+
+#searchcontainer{
+    position: relative;
+    width:625px;
+    height:750px;
+    border:solid black;
+}
+
+.inputbox{
+    text-align: center;
+    margin-top: 30px;
+
+}
+
+#checkbox{
+    margin-top: 30px;
+}
+
+#inputinfo{
+    border:solid black;
+    width:210px;
+    margin-left: 20px; 
+    margin-top: 30px;
+    height:450px;
+}
+
+h3{
+position: absolute;
+   top: 0;
+  
+        
+}
+
+fieldset{
+    margin:auto;
+}
+
+.searchbox{
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+#Authorsearch{
+    margin-left: 10px;
+}
+
+#btnsearch{
+    height:20px;
+    margin-left: 10px;
+}
+
+#categorysearch{
+    margin-bottom: 10px;
+}
+
+#webcomments{
+    margin-top: 10px;
+    width:200px;
+    height: 150px;
+    overflow: auto;
+
+}
+
+#weblabel{
+    margin-top: 20px;
+    margin-left: 25px;
+}
+
+#webbtn{
+    margin-top: 5px;
+    margin-left: 50px;
+}
+
+#totalbooks{
+    height:900px;
+    width:850px;
+    margin:auto;
+    border: solid black;
+    overflow: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#bookscontainer{
+    width:800px;
+    height:800px;
+    margin:auto;
+    border: solid black;
+    display:grid;
+    grid-template-columns: repeat(2,2fr);
+    grid-template-rows: repeat(2,2fr);
+    gap: 5px;
+    overflow: auto;
+
+}
+
+.ul{
+    list-style: none;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.li{
+    list-style: none;
+    font-size: large;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.singlebook{
+    position: relative;
+    width: 300px;
+    height: 450px;
+    border:solid black;  
+    margin: auto;
+    overflow: auto;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#bookcomments{
+    width:200px;
+    height: 150px;
+    margin-top: 10px;
+}
+
+#btncancel{
+    margin-left: 70px;
+
+}
+
+
+#btnsearchpage{
+    margin-left: 10px;
+    height:20px;
+}
+
+#btnsearchcat{
+    margin-left: 25px;
+    height:20px;
+}
+
+#bookcount {text-align: center}
+
+#bookmarkcount{
+    text-align: center
+}
+
+#searchoutput{
+    height: 550px;
+    width: 600px;
+    border: solid black;
+    overflow:auto;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
