@@ -36,18 +36,23 @@ body{
   animation-iteration-count: infinite;
 
 }
+
+ @keyframes fontshing {
+    0%   {color: rgba(163, 158, 21, 0.911);}
+    25%  {color: rgba(76, 177, 184, 0.929);}
+    50%  {color: rgba(87, 120, 34, 0.847);}
+    100% {color: #319480da;}
+  } 
+
+   
+
  @keyframes colorchange {
     0%   {background-color: rgba(163, 158, 21, 0.374);}
     25%  {background-color: rgba(76, 177, 184, 0.308);}
     50%  {background-color: rgba(87, 120, 34, 0.347);}
     100% {background-color: #31948057;}
   } 
-  @keyframes fontshing {
-    0%   {color: rgba(87, 120, 34, 0.95);}
-    25%  {color: rgba(27, 156, 165, 0.911);}
-    50%  {color: rgba(136, 132, 33, 0.92);}
-    100% {color: #6575a6ef;}
-  }
+ 
 
 #mainpart{
     display:grid;
@@ -309,6 +314,10 @@ fieldset{
 #reviews{
     margin-left: 30px;
     font-size: x-large;
+    font-style: inherit;
+    animation-name: fontshing;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
     font-style: inherit;
     animation-name: fontshing;
   animation-duration: 8s;
