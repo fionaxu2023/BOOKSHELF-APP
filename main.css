@@ -1,16 +1,29 @@
+
+
+
 .navbar{
-    margin-left: 290px;
+    padding-left: 290px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
-    
-   
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+
 }
+
+body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg,hsla(98, 39%, 70%, 0.621), #58789c8e);
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
 #intro{
     margin-left: 290px;
     margin-bottom: 0.5px;
     font-size: xx-large;
     font-family: Arial, Helvetica, sans-serif;
+    color: rgb(102, 121, 63);
 }
 
 #mainpart{
@@ -21,26 +34,35 @@
     height:900px;
     width:60%;
     margin:auto;
+    border-radius: 10px;
 }
 
 #inputboxes{
     position: relative;
     width:250px;
     height: 750px;
-    border:solid black; 
-
+    /* border:solid black;  */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
 }
 
 #searchcontainer{
     position: relative;
     width:625px;
     height:750px;
-    border:solid black;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
 }
 
 .inputbox{
     text-align: center;
     margin-top: 30px;
+    margin-bottom: 20px;
+    background-color: white;
 
 }
 
@@ -49,11 +71,12 @@
 }
 
 #inputinfo{
-    border:solid black;
+    border:solid gainsboro;
     width:210px;
     margin-left: 20px; 
     margin-top: 30px;
     height:450px;
+    background-color: white;
 }
 
 h3{
@@ -65,13 +88,17 @@ position: absolute;
 
 fieldset{
     margin:auto;
+    border-color: gainsboro;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(88, 87, 87);
+  border-style: solid;
 }
 
 .searchbox{
     margin-left: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-
+    
 }
 
 #Authorsearch{
@@ -84,7 +111,7 @@ fieldset{
 }
 
 #categorysearch{
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 #webcomments{
@@ -92,26 +119,30 @@ fieldset{
     width:200px;
     height: 150px;
     overflow: auto;
-
 }
 
 #weblabel{
     margin-top: 20px;
     margin-left: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(88, 87, 87);
 }
 
 #webbtn{
     margin-top: 5px;
     margin-left: 50px;
+    width:100px;
 }
 
 #totalbooks{
     height:900px;
     width:850px;
     margin:auto;
-    border: solid black;
     overflow: auto;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
 }
 
 
@@ -119,7 +150,6 @@ fieldset{
     width:800px;
     height:800px;
     margin:auto;
-    border: solid black;
     display:grid;
     grid-template-columns: repeat(2,2fr);
     grid-template-rows: repeat(2,2fr);
@@ -132,6 +162,7 @@ fieldset{
     list-style: none;
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
+    color: rgb(88, 87, 87);
 
 }
 
@@ -140,20 +171,42 @@ fieldset{
     font-size: large;
     margin-bottom: 10px;
     font-family: Arial, Helvetica, sans-serif;
+    color: rgb(88, 87, 87);
+    
 
+}
+#comli{
+    text-align: center;
+    list-style: none;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(88, 87, 87);
 }
 
 .singlebook{
     position: relative;
     width: 300px;
-    height: 450px;
-    border:solid black;  
+    height: 400px;
+    border:solid gainsboro; 
     margin: auto;
     overflow: auto;
     margin-left: 40px;
     margin-bottom: 20px;
     margin-top: 20px;
+    background-color: white;
+    border-radius: 5px;
+    padding: center;
+    animation-name: colorchange;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
 }
+
+@keyframes colorchange {
+    0%   {background-color: rgba(16, 142, 83, 0.443);}
+    25%  {background-color: rgba(76, 177, 184, 0.445);}
+    50%  {background-color: rgba(122, 170, 44, 0.311);}
+    100% {background-color: #65a69953;}
+  }
 
 #bookcomments{
     width:200px;
@@ -163,7 +216,16 @@ fieldset{
 
 #btncancel{
     margin-left: 70px;
+    /* background-image:url(delete\ button.png); */
+    background-position: center center;
+    background-size: 100% 100%;
+}
 
+#btncancel2{
+    margin-left: 70px;
+    /* background-image:url(delete\ button.png); */
+    background-position: center center;
+    background-size: 100% 100%;
 }
 
 
@@ -177,18 +239,77 @@ fieldset{
     height:20px;
 }
 
-#bookcount {text-align: center}
+#bookcount {text-align: center;
+}
 
 #bookmarkcount{
     text-align: center
 }
 
 #searchoutput{
-    height: 550px;
+    height: 530px;
     width: 600px;
-    border: solid black;
+    border: solid gainsboro;
     overflow:auto;
     margin-left: 10px;
     margin-top: 10px;
 }
 
+#mainbox{
+    text-align: center;
+    margin: auto;
+    border: solid black;
+    width: 60%;
+    height:900px;
+    background-color: white;
+    padding: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: rgb(88, 87, 87);
+}
+
+#Marked{
+    margin-left: 20px;
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(88, 87, 87);
+}
+
+#reviewbox{
+    height:400px;
+    width:850px;
+    margin:auto;
+    margin-top: 40px;
+    overflow: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+   
+}
+
+#reviews{
+    margin-left: 30px;
+    font-size: x-large;
+    color:rgba(88, 87, 87);
+}
+
+.bookintro{
+    animation-name: colorchange;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    border-color: white;
+    margin:auto;
+    text-align: center;
+    font-size: larger;
+    color: rgb(88, 87, 87);
+    width:800px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+}
+
+.material-symbols-outlined{
+    font-size: medium;
+    border: gray;
+    
+}

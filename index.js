@@ -1,7 +1,6 @@
 let bookshelf=[];
 let markedarray=[];
 
-
 class Book{
     constructor(Title, Author,Language,Categroy,Pagenum){
         this.Title=Title;
@@ -9,11 +8,12 @@ class Book{
         this.Language=Language;
         this.Categroy=Categroy;
         this.Pagenum=Pagenum;
+        this.Marked="No";
     }  
 }
 let btnadd=document.getElementById("btnadd")
 let categorychos = document.getElementsByName("Category");
-
+let markedcheck=document.getElementById("markedlabel");
 btnadd.addEventListener("click", ()=>{
     let inputtit=document.getElementById("Title").value
     let inputauthor=document.getElementById("Author").value
@@ -28,6 +28,14 @@ btnadd.addEventListener("click", ()=>{
         } 
     }
     let newbook= new Book(inputtit,inputauthor,inputlan,inputcat,randompage);
+
+    if (markedcheck.checked){
+        newbook.Marked="Yes";
+        markedarray.push(newbook)
+    }
+    else{
+        newbook.Marked="No";
+    }
     bookshelf.unshift(newbook)
     renderbooks(bookshelf[0])
 })
@@ -37,12 +45,15 @@ function renderbooks(input){
      let keysarr = Object.keys(input);
     //  let markedarray=[];
      let btncancel=document.createElement("button"); 
-        btncancel.innerText="X"
+        btncancel.innerText="delete"
         btncancel.id="btncancel";
+        btncancel.classList="material-symbols-outlined"
+//         
        
         let btnbookcom=document.createElement("button"); 
-        btnbookcom.innerText="Add Comments"
+        btnbookcom.innerText="add_circle"
         btnbookcom.id="btnbookcom";
+        btnbookcom.classList="material-symbols-outlined";
 
      let bookcomment=document.createElement("textarea");
      bookcomment.name="bookcomments";
@@ -50,14 +61,7 @@ function renderbooks(input){
      bookcomment.maxLength=280;
      bookcomment.id="bookcomments"
 
-    let markcheckbox = document.createElement('input');
-        markcheckbox.type = "checkbox";
-        markcheckbox.name = "markcheckbox";
-        markcheckbox.id = "markcheckbox"
-   let marklabel = document.createElement('label');
-   let  tn = document.createTextNode("Mark it and read latter?");
-         marklabel.htmlFor="markcheckbox";
-         marklabel.appendChild(tn); 
+
 
 
      let ul=document.createElement("ul");
@@ -68,6 +72,11 @@ function renderbooks(input){
     let bookcount=document.getElementById("bookcount")
     let booksum=bookshelf.reduce(sum => sum + 1, 0)
     bookcount.innerText="Count of Books:"+booksum
+
+    let markcount=document.getElementById("bookmarkcount")
+    let marksum=markedarray.reduce(sum => sum + 1, 0)
+    markcount.innerText="Count of Books Marked:"+marksum;
+
         
         for(i=0; i<valuearr.length; i+=1){
          let li=document.createElement("li");
@@ -76,8 +85,6 @@ function renderbooks(input){
         
          li.appendChild (btncancel);
          ul.appendChild(li);
-         ul.appendChild(marklabel);
-         ul.appendChild(markcheckbox)
            ul.appendChild(bookcomment);
            ul.appendChild(btnbookcom);
            div.appendChild(ul);
@@ -96,9 +103,9 @@ function renderbooks(input){
 
          btnbookcom.addEventListener("click", ()=>{
              let li=document.createElement("li");
-             li.classList="li"
+             li.id="comli"
              let msg=bookcomment.value;
-             li.innerHTML = `${msg} <button id="btncommremove" >X</button> `;
+             li.innerHTML = `${msg} <button id="btncommremove" class="material-symbols-outlined">delete</button> `;
              div.appendChild(li);
              let btncommremove=document.getElementById("btncommremove");
              btncommremove.addEventListener("click",()=>{
@@ -106,20 +113,11 @@ function renderbooks(input){
              })
          })
 
-        //  markcheckbox.addEventListener("check",()=>{
-        //     markedarray.push(input);
-        //     console.log(markedarray);
-        // let summarked=markedarray.reduce(sum => sum + 1, 0);
-        // bookmarkcount.innerText="Count of Books Marked:"+ summarked;
-    
-        // })
-  
 } 
 
 let btnsearch=document.getElementById("btnsearch")
 let searchoutput=document.getElementById("searchoutput")
-// let searchtitle=document.getElementById("Titlesearch").value;
-// let searchauthor=document.getElementById("Authorsearch").value;
+
 
 
 btnsearch.addEventListener("click", ()=>{
@@ -170,7 +168,6 @@ btnsearchpage.addEventListener("click",()=>{
     if(index===2){
         bookfound=bookshelf.filter((ele)=>ele.Pagenum>600)
     }
-
    renderbookfound(bookfound);
 
 })
@@ -180,15 +177,26 @@ btnsearchpage.addEventListener("click",()=>{
 
    function renderbookfound(arr){
     let btncancel2=document.createElement("button"); 
-        btncancel2.innerText="X"
-        btncancel2.classList="btncancel2";
+        btncancel2.innerText="delete"
+        btncancel2.classList="material-symbols-outlined"
 
      let ul=document.createElement("ul");
         ul.classList="ul"
     let div=document.createElement("div");
     div.classList="singlebooksearch" 
+
+    if(arr.length === 0){
+        let li=document.createElement("li");
+            li.classList="li"
+        li.innerText="Sorry, this book is not in your list."
+        li.appendChild (btncancel2);
+             ul.appendChild(li);
+            div.appendChild(ul);
+            searchoutput.appendChild(div);
+    }
+
+    else{
     arr.forEach(ele => {
-   if (typeof(ele)=== "object" ){
     let valuearr=Object.values(ele);
      let keysarr = Object.keys(ele);
     for(i=0; i<valuearr.length; i+=1){
@@ -199,20 +207,7 @@ btnsearchpage.addEventListener("click",()=>{
          ul.appendChild(li);
            div.appendChild(ul);
            searchoutput.appendChild(div);
-   }
-}
-
-else{
-    let li=document.createElement("li");
-        li.classList="li"
-    li.innerText="Sorry, this book is not in your list."
-    li.appendChild (btncancel2);
-         ul.appendChild(li);
-        div.appendChild(ul);
-        searchoutput.appendChild(div);
-}
-
-});
+   } })};
 
 btncancel2.addEventListener("click", ()=>{                                                                                    
     div.remove();  
@@ -220,3 +215,45 @@ btncancel2.addEventListener("click", ()=>{
 }
 
 
+
+let webbtn=document.getElementById("webbtn");
+webbtn.addEventListener("click",()=>{
+ let reviewbox=document.getElementById("reviewbox")
+  let msg=document.getElementById("webcomments").value
+  let ul=document.createElement("ul");
+  let btncancel2=document.createElement("button"); 
+        btncancel2.innerText="delete"
+        btncancel2.classList="material-symbols-outlined";
+
+  ul.classList="ul"
+     let li=document.createElement("li");
+     li.classList="li"
+     li.innerText=msg;
+     li.appendChild(btncancel2)
+    ul.appendChild(li);
+     reviewbox.appendChild(ul); 
+     
+     btncancel2.addEventListener("click", ()=>{                                                                                    
+        ul.remove();  
+    })
+     
+})
+
+function validate(){
+    let password = document.getElementById("pass");
+    let user=document.getElementById("user");
+
+    if(emailcheck(user.value)===true && password.value.length >= 8){
+        alert("Login Succesfull");
+        window.location.href="http://127.0.0.1:5500/BOOKSHELF-APP/index.html"
+    }
+    else{
+        alert("Login Failed");
+    }
+
+
+    function emailcheck(email){
+        const re = /\S+@\S+\.\S+/;
+      return re.test(email);
+    }
+}

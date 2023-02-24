@@ -4,14 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="main.css">
+    <style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 48
+        }
+        </style>
     <title>BOOKSHELF APP</title>
 </head>
 <body>
     <div class="navbar">
-        <a class=nav-link id="homebar" href="index.html" style="color:black">Home</a>
-        <a class=nav-link id="contactbar" href="about.html" style="color:black">About</a>
-        <a class=nav-link id="aboutbar" href="contact.html" style="color:black">Contact</a> 
+        <a class=nav-link id="homebar" href="index.html" style="color:rgb(106, 134, 107)">Home</a>
+        <a class=nav-link id="contactbar" href="about.html" style="color:rgb(106, 134, 107)">About</a>
+        <a class=nav-link id="aboutbar" href="contact.html" style="color:rgb(106, 134, 107)">Contact</a> 
+        <a class=nav-link id="logout" href="login.html" style="color:rgb(106, 134, 107)">Logout</a> 
     </div>
     
     <p id="intro">MHLF NOVEL-BUZZ</p>
@@ -19,6 +30,7 @@
     <div id="mainpart">
         <div id="inputboxes">
             <div id="inputinfo">
+                <!-- <form action="process-form.php" method="post"> -->
             <div class="inputbox"><input type="title" name="title" id="Title"
                 placeholder="Title" style="width: 100px"></input></div>
             <div class="inputbox"><input type="Author" name="Author" id="Author"
@@ -52,17 +64,17 @@
 
             </fieldset></div>
 
-            <div class="inputbox"><button id="btnadd" style="width: 100px">Add Book</button></div>
+            <div><label id="Marked">Mark it and read latter?</label>
+                 <input type="checkbox" name="markedlabel" id="markedlabel"></input>
+            </div>
+            
+            <div class="inputbox"><button id="btnadd" style="width: 100px" class="material-symbols-outlined">add_circle</button></div>
         </div>
-
+    <!-- </form> -->
         <div id="weblabel"><label for="webcomment" ">Your Comments on NOVEL-BUZZ</NOVEL-BUZZ>:</label>
-
-        <div><textarea id="webcomments" name="webcomments"
-                  maxlength="280">
-                  </textarea></div>
-            <div><button id="webbtn">Add Comments</button></div>
-        </div>
- 
+            <div><textarea id="webcomments" name="webcomments" maxlength="280"></textarea></div>
+                <div><button id="webbtn" class="material-symbols-outlined">add_circle</button></div>
+         </div>
         </div>
 
         <div id="searchcontainer">
@@ -109,11 +121,17 @@
     </div>
 
     <div id="totalbooks">
+        <div class="bookintro">
         <div><p id="bookcount">Count of Books:</p></div>
        <div><p id="bookmarkcount">Count of Books Marked:</p></div> 
+       </div>
        <div id="bookscontainer"></div>
     </div>
     
+    <div id="reviewbox">
+        <p id="reviews">Reviews:</p>
+    </div>
+
 </body>
 <script src="index.js"></script>
 </html>
