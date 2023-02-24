@@ -8,6 +8,15 @@
 
 }
 
+.nav-link{
+    margin-left: 20px;
+    border-radius: 5px;
+    background-color: white;
+    border:solid rgba(65, 80, 168, 0.689);
+
+
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -27,14 +36,18 @@ body{
   animation-iteration-count: infinite;
 
 }
-
- @keyframes fontshing {
-    0%   {color: rgba(163, 158, 21, 0.911);}
-    25%  {color: rgba(76, 177, 184, 0.929);}
-    50%  {color: rgba(87, 120, 34, 0.847);}
-    100% {color: #319480da;}
+ @keyframes colorchange {
+    0%   {background-color: rgba(163, 158, 21, 0.374);}
+    25%  {background-color: rgba(76, 177, 184, 0.308);}
+    50%  {background-color: rgba(87, 120, 34, 0.347);}
+    100% {background-color: #31948057;}
   } 
-
+  @keyframes fontshing {
+    0%   {color: rgba(87, 120, 34, 0.95);}
+    25%  {color: rgba(27, 156, 165, 0.911);}
+    50%  {color: rgba(136, 132, 33, 0.92);}
+    100% {color: #6575a6ef;}
+  }
 
 #mainpart{
     display:grid;
@@ -207,16 +220,11 @@ fieldset{
     border-radius: 5px;
     padding: center;
     animation-name: colorchange;
-  animation-duration: 5s;
+  animation-duration: 8s;
   animation-iteration-count: infinite;
 }
 
-@keyframes colorchange {
-    0%   {background-color: rgba(16, 142, 83, 0.856);}
-    25%  {background-color: rgba(27, 156, 165, 0.763);}
-    50%  {background-color: rgba(228, 222, 34, 0.92);}
-    100% {background-color: #6575a6ef;}
-  }
+
 
 #bookcomments{
     width:200px;
