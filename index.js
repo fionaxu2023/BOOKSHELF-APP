@@ -1,5 +1,5 @@
-let bookshelf=[];
-let markedarray=[];
+let bookshelf=[]; //create the bookshelf arr
+let markedarray=[];//create the array of books that are marked
 
 class Book{
     constructor(Title, Author,Language,Categroy,Pagenum){
@@ -12,8 +12,8 @@ class Book{
     }  
 }
 let btnadd=document.getElementById("btnadd")
-let categorychos = document.getElementsByName("Category");
-let markedcheck=document.getElementById("markedlabel");
+let categorychos = document.getElementsByName("Category"); //call the fieldset 
+let markedcheck=document.getElementById("markedlabel");   //call the checkbox
 btnadd.addEventListener("click", ()=>{
     let inputtit=document.getElementById("Title").value
     let inputauthor=document.getElementById("Author").value
@@ -36,26 +36,26 @@ btnadd.addEventListener("click", ()=>{
     else{
         newbook.Marked="No";
     }
-    bookshelf.unshift(newbook)
+    bookshelf.unshift(newbook)     //add book to the bookshelf
     renderbooks(bookshelf[0])
 })
 
-function renderbooks(input){
-     let valuearr=Object.values(input);
+function renderbooks(input){                    
+     let valuearr=Object.values(input);     //put object keys and values into arr
      let keysarr = Object.keys(input);
     //  let markedarray=[];
-     let btncancel=document.createElement("button"); 
+     let btncancel=document.createElement("button");  
         btncancel.innerText="delete"
         btncancel.id="btncancel";
         btncancel.classList="material-symbols-outlined"
 //         
        
-        let btnbookcom=document.createElement("button"); 
+        let btnbookcom=document.createElement("button");  //create button to add book comments
         btnbookcom.innerText="add_circle"
         btnbookcom.id="btnbookcom";
         btnbookcom.classList="material-symbols-outlined";
 
-     let bookcomment=document.createElement("textarea");
+     let bookcomment=document.createElement("textarea");  
      bookcomment.name="bookcomments";
      bookcomment.placeholder="type your comments here";
      bookcomment.maxLength=280;
@@ -70,7 +70,7 @@ function renderbooks(input){
         div.classList="singlebook" 
     
     let bookcount=document.getElementById("bookcount")
-    let booksum=bookshelf.reduce(sum => sum + 1, 0)
+    let booksum=bookshelf.reduce(sum => sum + 1, 0)         
     bookcount.innerText="Count of Books:"+booksum
 
     let markcount=document.getElementById("bookmarkcount")
@@ -79,7 +79,7 @@ function renderbooks(input){
 
         
         for(i=0; i<valuearr.length; i+=1){
-         let li=document.createElement("li");
+         let li=document.createElement("li");              //put items in js to html
          li.classList="li"
          li.innerText=keysarr[i]+":"+valuearr[i]
         
@@ -92,7 +92,7 @@ function renderbooks(input){
         
          document.getElementById("bookscontainer").appendChild(div)}
          
-         btncancel.addEventListener("click", ()=>{                                                                                    
+         btncancel.addEventListener("click", ()=>{                                                                                 
             div.remove(); 
             bookshelf = bookshelf.filter((ele)=>!(ele.Title.includes(valuearr[0])))
             booksum=bookshelf.length;
@@ -102,7 +102,7 @@ function renderbooks(input){
         
 
          btnbookcom.addEventListener("click", ()=>{
-             let li=document.createElement("li");
+             let li=document.createElement("li");           //add book comments
              li.id="comli"
              let msg=bookcomment.value;
              li.innerHTML = `${msg} <button id="btncommremove" class="material-symbols-outlined">delete</button> `;
@@ -115,8 +115,8 @@ function renderbooks(input){
 
 } 
 
-let btnsearch=document.getElementById("btnsearch")
-let searchoutput=document.getElementById("searchoutput")
+let btnsearch=document.getElementById("btnsearch")            //button that search by title and names
+let searchoutput=document.getElementById("searchoutput")     
 
 
 
@@ -126,7 +126,7 @@ btnsearch.addEventListener("click", ()=>{
 })
 
 let btnsearchcat=document.getElementById("btnsearchcat");
-let search_catchos = document.getElementsByName("Categorysear");
+let search_catchos = document.getElementsByName("Categorysear");   //button that search by categories
 
 btnsearchcat.addEventListener("click",()=>{
 let valueget;
@@ -143,9 +143,9 @@ let valueget;
 })
 
 let btnsearchpage=document.getElementById("btnsearchpage");
-let search_pages=document.getElementsByName("Pagesear");
+let search_pages=document.getElementsByName("Pagesear");    // button that search by pages
 
-btnsearchpage.addEventListener("click",()=>{
+btnsearchpage.addEventListener("click",()=>{                       
     let index;
     for(let i=0; i<search_pages.length; i+=1){
         if(search_pages[i].checked){
@@ -175,7 +175,7 @@ btnsearchpage.addEventListener("click",()=>{
     
 
 
-   function renderbookfound(arr){
+   function renderbookfound(arr){             // render function that put search output in html
     let btncancel2=document.createElement("button"); 
         btncancel2.innerText="delete"
         btncancel2.classList="material-symbols-outlined"
@@ -216,7 +216,7 @@ btncancel2.addEventListener("click", ()=>{
 
 
 
-let webbtn=document.getElementById("webbtn");
+let webbtn=document.getElementById("webbtn");            //add eventlistener to button that add web comments 
 webbtn.addEventListener("click",()=>{
  let reviewbox=document.getElementById("reviewbox")
   let msg=document.getElementById("webcomments").value
@@ -239,7 +239,7 @@ webbtn.addEventListener("click",()=>{
      
 })
 
-function validate(){
+function validate(){                               // the function used in login portal to check the email and the password
     let password = document.getElementById("pass");
     let user=document.getElementById("user");
 
